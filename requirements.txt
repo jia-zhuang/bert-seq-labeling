@@ -1,0 +1,5 @@
+tensorflow==1.14.0
+tokenizers==0.6.0
+seqeval
+pandas
+numpy
