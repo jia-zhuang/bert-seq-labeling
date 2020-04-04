@@ -1,3 +1,8 @@
+# custom
+free_spo_extract_model.tar
+free_spo_extract_model/
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
