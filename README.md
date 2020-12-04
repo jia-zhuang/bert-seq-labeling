@@ -24,6 +24,8 @@ model = modeling.BertModel(
 )
 
 # 支持层裁剪的 bert
+
+
 model = modeling.BertModel(
     config=bert_config,
     is_training=is_training,
@@ -45,6 +47,16 @@ model = modeling.BertModel(
 ### TF Serving
 
 - ckpt 转 saved model：`convert_ckpt_to_saved_model.py`
+
+为了方便计算在 dev 集上的 metric，使用了 `estimator.predict` 方法获取预测指和真值，因此在导出模型时需要把逻辑矫正过来
+
+```python
+# 转化前代码做如下调整
+
+# elif mode == tf.estimator.ModeKeys.PREDICT:
+elif mode == tf.estimator.ModeKeys.EVAL:
+```
+
 
 - 使用 docker 起 tf-serving 服务：`tf_serving.sh`
 
