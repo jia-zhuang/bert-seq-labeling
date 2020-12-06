@@ -25,7 +25,7 @@ model = modeling.BertModel(
 
 # 支持层裁剪的 bert
 
-
+import bert as modeling
 model = modeling.BertModel(
     config=bert_config,
     is_training=is_training,
